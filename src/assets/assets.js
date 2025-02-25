@@ -100,7 +100,7 @@ export const food_list = [
       name: "watermelon",
       image: superitem_7,
       price: 35,
-      description: "Fresh and organic apples",
+      description: "Fresh and organic",
       category: "fruit"
     },
     {
@@ -110,5 +110,16 @@ export const food_list = [
       price: 40,
       description: "100% pure orange juice",
       category: "beverage"
+    }
+  ];
+
+  export const ItemSuper_list = [
+    {
+      _id: "1",
+      name: "Pepsi",
+      image: superitem_1,
+      price: 12,
+      description: "It’s only Pepsi",
+      category: "water"
     }
   ];

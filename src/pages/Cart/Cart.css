@@ -1,0 +1,193 @@
+.cart {
+    max-width: 1100px;
+    margin: 50px auto;
+    padding: 20px;
+  }
+  
+  .cart-item {
+    width: 100%;
+  }
+  
+  /* ส่วนหัวของตาราง */
+  .cart-item-title {
+    display: grid;
+    grid-template-columns: 120px 2fr 1fr 1fr 1fr 50px;
+    align-items: center;
+    background: none;
+    padding: 10px 0;
+    font-weight: bold;
+    color: #333;
+    text-align: center;
+    border-bottom: 2px solid #ddd;
+  }
+  
+  /* รายการสินค้าในตะกร้า */
+  .cart-items-titile-item {
+    display: grid;
+    grid-template-columns: 120px 2fr 1fr 1fr 1fr 50px;
+    align-items: center;
+    padding: 10px 0;
+    text-align: center;
+    border-bottom: 1px solid #eee;
+  }
+  
+  .cart-items-titile-item img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 10px;
+  }
+  
+  .cart-items-titile-item p {
+    margin: 0;
+    font-size: 18px;
+    color: #444;
+  }
+  
+  .cart-items-titile-item .cross {
+    color: red;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 20px;
+    transition: color 0.2s ease-in-out, transform 0.2s;
+  }
+  
+  .cart-items-titile-item .cross:hover {
+    color: darkred;
+    transform: scale(1.2);
+  }
+  
+  hr {
+    margin: 10px 0;
+    border: 0.5px solid #ddd;
+  }
+  
+  /* 🔹 เปลี่ยน Cart Total ให้ไม่ใช้กรอบสี่เหลี่ยม */
+  .cart-bottom {
+    display: flex;
+    justify-content: flex-start; /* ชิดซ้าย */
+    margin-top: 30px;
+  }
+  
+  .cart-total {
+    width: 400px; /* เพิ่มความกว้าง */
+    padding: 20px;
+    background: none; /* เอาพื้นหลังออก */
+    border-radius: 0px; /* เอากรอบออก */
+  }
+  
+  .cart-total h2 {
+    text-align: left; /* จัดข้อความให้ชิดซ้าย */
+    color: #333;
+    margin-bottom: 15px;
+  }
+  
+  .cart-total-details {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+    font-size: 18px;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .cart-total-details:last-child {
+    border-bottom: none;
+  }
+  
+  .cart-total-details b {
+    font-size: 20px;
+    color: #000;
+  }
+  
+  /* 🔹 ปุ่ม Checkout */
+  .cart-total button {
+    width: 100%;
+    padding: 12px;
+    margin-top: 15px;
+    background: #ff6600;
+    color: #fff;
+    font-size: 18px;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.2s ease-in-out;
+  }
+  
+  .cart-total button:hover {
+    background: #e65c00;
+  }
+  
+  /* 🔹 Media Queries สำหรับทำ Responsive */
+  @media (max-width: 768px) {
+    .cart {
+      padding: 15px;
+    }
+  
+    /* เปลี่ยนกริดของส่วน title ให้เป็นแบบคอลัมน์ */
+    .cart-item-title {
+      grid-template-columns: 1fr 2fr 1fr 1fr 1fr 1fr;
+      font-size: 14px; /* ลดขนาดตัวอักษร */
+    }
+  
+    .cart-items-titile-item {
+      grid-template-columns: 1fr 2fr 1fr 1fr 1fr 1fr;
+      font-size: 14px;
+    }
+  
+    .cart-items-titile-item img {
+      width: 80px; /* ลดขนาดรูป */
+      height: 80px;
+    }
+  
+    .cart-total {
+      width: 100%; /* ขยาย Cart Total ให้เต็ม */
+      padding: 15px;
+    }
+  
+    .cart-total-details p,
+    .cart-total-details b {
+      font-size: 16px; /* ลดขนาดตัวอักษร */
+    }
+  
+    .cart-total button {
+      font-size: 16px; /* ลดขนาดตัวอักษรปุ่ม */
+    }
+  }
+  
+  /* สำหรับหน้าจอเล็กสุด */
+  @media (max-width: 480px) {
+    .cart {
+      padding: 10px;
+    }
+  
+    .cart-item-title {
+      grid-template-columns: 1fr 2fr 1fr 1fr 1fr;
+      font-size: 12px; /* ลดขนาดตัวอักษรให้เล็กลง */
+    }
+  
+    .cart-items-titile-item {
+      grid-template-columns: 1fr 2fr 1fr 1fr 1fr;
+      font-size: 12px;
+    }
+  
+    .cart-items-titile-item img {
+      width: 60px; /* ลดขนาดรูป */
+      height: 60px;
+    }
+  
+    .cart-total {
+      width: 100%;
+      padding: 10px;
+    }
+  
+    .cart-total-details p,
+    .cart-total-details b {
+      font-size: 14px; /* ลดขนาดตัวอักษร */
+    }
+  
+    .cart-total button {
+      font-size: 14px; /* ลดขนาดปุ่ม */
+    }
+  }
+  

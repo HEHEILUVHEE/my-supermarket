@@ -4,15 +4,15 @@ import { StoreContext } from '../../context/StoreContext'
 import ProductItem from '../ProductItem/ProductItem';
 
 
-const ItemDisplay = ({category} ) => {
+const ItemDisplaysuper = ({category} ) => {
     
-    const {food_list} = useContext(StoreContext)
+    const {ItemSuper_list} = useContext(StoreContext)
     
     return (
     <div className='item-display' id='item-display'>
-        <h2>ของดีราคาดีนะน้อง</h2>
+        <h2>ของดีๆๆๆทั้งนั้น</h2>
       <div className="item-display-list">
-        {food_list.map((item,index)=>{
+        {ItemSuper_list.map((item,index)=>{
           
             return <ProductItem key={index} id={item._id} name={item.name} description={item.description} price={item.price} image={item.image}/>
         })}
@@ -26,4 +26,4 @@ const ItemDisplay = ({category} ) => {
   )
 }
 
-export default ItemDisplay
+export default ItemDisplaysuper

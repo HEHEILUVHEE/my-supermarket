@@ -1,30 +1,43 @@
-import React, { useState } from 'react'
-import './Navbar.css'
+import React, { useContext, useState } from 'react';
+import { Link, NavLink } from 'react-router-dom';
+import './Navbar.css';
 import logo from '../../assets/logo.png';
 import { CiSearch } from "react-icons/ci";
 import { FaBucket } from "react-icons/fa6";
-const Navbar = () => {
-  const [menu,setMenu] = useState("home")
+import { StoreContext } from '../../context/StoreContext';
+
+const Navbar = ({setShowLogin}) => {
+  const [menu, setMenu] = useState("home");
+  const {getTotalCartAmount} =useContext(StoreContext)
   return (
     <div className='navbar'>
-        <img src={logo} alt="" className='logo' />
-    <ul className="navbar-menu">
-        <li onClick={()=>setMenu("home")} className={menu==="home"?"active":""}>home</li>
-        <li onClick={()=>setMenu("menu")} className={menu==="menu"?"active":""}>menu</li>
-        <li onClick={()=>setMenu("about")} className={menu==="about"?"active":""}>about</li>
-        <li onClick={()=>setMenu("contact us")} className={menu==="contact us"?"active":""}>contact us</li>
-    </ul>
+     <NavLink to ='/'> <img src={logo} alt="logo" className='logo' /></NavLink>
+     
+     
+      <ul className="navbar-menu">
+        <li>
+          <NavLink to="/" exact activeClassName="active">หน้าหลัก</NavLink>
+        </li>
+        <li>
+          <NavLink to="/menu" activeClassName="active">ของขาย</NavLink>
+        </li>
+        <li>
+          <NavLink to="/about" activeClassName="active">เกี่ยวกับเว็ปไซต์</NavLink>
+        </li>
+        <li>
+          <NavLink to="/contact" activeClassName="active">ติดต่อทางเราได้น้ะจ๋ะ</NavLink>
+        </li>
+      </ul>
       <div className="navbar-right">
-      <CiSearch size={24} />
-      <div>
-      <FaBucket size={24}/>
-      <div className='dot'></div>
-      </div>
-      <button>sign in</button>
+        <CiSearch size={24} />
+        <div>
+        <NavLink to='/cart'>    <FaBucket size={24} />  </NavLink>
+          <div className= {getTotalCartAmount()===0?"":"dot"}></div>
+        </div>
+        <button onClick={()=>setShowLogin(true)}>sign in</button>
       </div>
     </div>
-   
-  )
+  );
 }
 
-export default Navbar
+export default Navbar;
